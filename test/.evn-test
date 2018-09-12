@@ -1,0 +1,9 @@
+# 以#开头的是注释行
+age = 35
+
+# 可以有空行
+name = jcode
+man = yes
+
+# 这个人很懒，没有什么介绍
+describe =
