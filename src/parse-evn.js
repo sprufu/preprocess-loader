@@ -15,9 +15,11 @@ function parseEvn (options) {
     const evnFile = options.filename || '.preprocess-evn';
     evn = parse(evnFile, chartSet);
 
-    fs.watchFile(evnFile, () => {
-        evn = parse(evnFile, chartSet);
-    });
+    if (options.watchFile) {
+        fs.watchFile(evnFile, () => {
+            evn = parse(evnFile, chartSet);
+        });
+    }
 
     return evn;
 }

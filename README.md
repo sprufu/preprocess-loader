@@ -15,7 +15,8 @@ module.exports = {
       test: /\.(js|html?|css|less|vue)$/,
       loader: 'preprocess-loader',
       options: {
-        filename: process.env.PREPROCESS_ENV_FILENAME || '.preprocess-evn'
+        filename: process.env.PREPROCESS_ENV_FILENAME || '.preprocess-evn',
+        watchFile: process.env.NODE_ENV === 'development'
       }
     }]
   }
