@@ -37,9 +37,11 @@ module.exports = function (evn, source) {
     //   index: 12 // 位置
     // }
   ];
-  let offset = 0;
+  let offset;
+  let offsetStart = 0;
   for (let it of starts) {
-    offset = source.indexOf(it, offset);
+    offset = source.indexOf(it, offsetStart);
+    offsetStart = offset + it.length;
     pos.push({
       content: it,
       type: 'start',
